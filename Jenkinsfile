@@ -6,7 +6,7 @@ pipeline {
 
   }
   stages {
-    stage('') {
+    stage('Display Message') {
       steps {
         sh '''echo " This is my first project"
 date
