@@ -11,9 +11,9 @@ pipeline {
         stage('Display Message') {
           steps {
             sh '''echo " This is my first project"
-date
-curl www.google.com > sample.txt
-grep "google" sample.txt
+            sh 'date'
+            sh  'curl www.google.com > sample.txt'
+            sh   'grep "google" sample.txt'
 '''
             error 'There is a error in this step'
           }
