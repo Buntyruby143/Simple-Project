@@ -7,11 +7,32 @@ pipeline {
   }
   stages {
     stage('Display Message') {
-      steps {
-        sh '''echo " This is my first project"
+      parallel {
+        stage('Display Message') {
+          steps {
+            sh '''echo " This is my first project"
 date
 
 '''
+          }
+        }
+
+        stage('Create files and Directories') {
+          steps {
+            sh '''echo "Creating python and ruby files"
+
+touch python.txt ruby.txt
+
+echo "create a folder"
+
+mkdir pgm
+
+echo "list out the files and directories"
+
+ls -lrth '''
+          }
+        }
+
       }
     }
 
